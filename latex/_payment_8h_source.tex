@@ -1,0 +1,56 @@
+\doxysection{Payment.\+h}
+\hypertarget{_payment_8h_source}{}\label{_payment_8h_source}\index{payment/Payment.h@{payment/Payment.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Alexander\ on\ 29.01.2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ OOOP3\_PAYMENT\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ OOOP3\_PAYMENT\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_payment}{Payment}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{enum\ class}\ TypePayment\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Salary,\ Bonus}
+\DoxyCodeLine{00016\ \ \ \ \ \};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::string\ date;}
+\DoxyCodeLine{00019\ \ \ \ \ TypePayment\ typePayment;}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ amount;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_payment_a24fd08b2123c8ce838d9436f62b03148}{getAmount}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ amount;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_payment_aeefcbd2acb253992666433960a53d9a4}{setAmount}}(\textcolor{keywordtype}{int}\ amount)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ Payment::amount\ =\ amount;}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{class_payment_a289b8db84ce72ae2d0f7937df3287410}{getDate}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ date;}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_payment_a1170fc25c392a047d12e71fb674467d1}{setData}}(\textcolor{keyword}{const}\ std::string\ \&date)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ Payment::date\ =\ date;}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00057\ \ \ \ \ [[nodiscard]]\ TypePayment\ \mbox{\hyperlink{class_payment_ae4a4605beb5caf47ba2d7c04722fc45d}{getTypePayment}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ typePayment;}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_payment_aa656adc6ec0380fbdc113eb80d8bd388}{setTypePayment}}(TypePayment\ typePayment)\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ Payment::typePayment\ =\ typePayment;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_payment}{Payment}}(std::string\ date,\ TypePayment\ typePayment,\ \textcolor{keywordtype}{int}\ amount)\ :\ date(std::move(date)),\ typePayment(typePayment),}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ amount(amount)\ \{\}}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//OOOP3\_PAYMENT\_H}}
+
+\end{DoxyCode}

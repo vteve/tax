@@ -1,0 +1,59 @@
+\doxysection{Application Class Reference}
+\hypertarget{class_application}{}\label{class_application}\index{Application@{Application}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_application_a16d6d5f010736cf91236d9ae8f691bbd}{add\+Taxpayer}} (long personal\+Number, \mbox{\hyperlink{class_worker}{Worker}} \texorpdfstring{$\ast$}{*}worker)
+\item 
+double \mbox{\hyperlink{class_application_a743f55165404f3d36a1317aaf6956ab3}{calculate\+Tax}} (int personal\+Number)
+\item 
+\Hypertarget{class_application_a8a9217cde93ae5d595ec784ffe5605d9}\label{class_application_a8a9217cde93ae5d595ec784ffe5605d9} 
+\mbox{\hyperlink{class_table}{Table}}$<$ long, \mbox{\hyperlink{class_worker}{Worker}} $>$ \& {\bfseries get\+Workers} ()
+\item 
+\Hypertarget{class_application_a03d62f84ecf207b38fddfb032379bc5a}\label{class_application_a03d62f84ecf207b38fddfb032379bc5a} 
+void {\bfseries set\+Workers} (const \mbox{\hyperlink{class_table}{Table}}$<$ long, \mbox{\hyperlink{class_worker}{Worker}} $>$ \&workers)
+\item 
+void \mbox{\hyperlink{class_application_a427d62b2266aaf69831bf0768e694e65}{show\+Table}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_application_a16d6d5f010736cf91236d9ae8f691bbd}\label{class_application_a16d6d5f010736cf91236d9ae8f691bbd} 
+\index{Application@{Application}!addTaxpayer@{addTaxpayer}}
+\index{addTaxpayer@{addTaxpayer}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{addTaxpayer()}{addTaxpayer()}}
+{\footnotesize\ttfamily void Application\+::add\+Taxpayer (\begin{DoxyParamCaption}\item[{long}]{personal\+Number,  }\item[{\mbox{\hyperlink{class_worker}{Worker}} \texorpdfstring{$\ast$}{*}}]{worker }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em personal\+Number} & is a key in the table \\
+\hline
+{\em worker} & is a value in th table \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_application_a743f55165404f3d36a1317aaf6956ab3}\label{class_application_a743f55165404f3d36a1317aaf6956ab3} 
+\index{Application@{Application}!calculateTax@{calculateTax}}
+\index{calculateTax@{calculateTax}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{calculateTax()}{calculateTax()}}
+{\footnotesize\ttfamily double Application\+::calculate\+Tax (\begin{DoxyParamCaption}\item[{int}]{personal\+Number }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em worker} & is object from which tax is calculated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of tax 
+\end{DoxyReturn}
+\Hypertarget{class_application_a427d62b2266aaf69831bf0768e694e65}\label{class_application_a427d62b2266aaf69831bf0768e694e65} 
+\index{Application@{Application}!showTable@{showTable}}
+\index{showTable@{showTable}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{showTable()}{showTable()}}
+{\footnotesize\ttfamily void Application\+::show\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+show table 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+application/Application.\+h\item 
+application/Application.\+cpp\end{DoxyCompactItemize}

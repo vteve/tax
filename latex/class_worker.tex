@@ -1,0 +1,232 @@
+\doxysection{Worker Class Reference}
+\hypertarget{class_worker}{}\label{class_worker}\index{Worker@{Worker}}
+Inheritance diagram for Worker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_worker}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_worker_aec53a87fcab606ffb7d90df78b91fb2f}\label{class_worker_aec53a87fcab606ffb7d90df78b91fb2f} 
+enum class {\bfseries Type\+Of\+Worker} \{ {\bfseries contract}
+, {\bfseries budjet}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_worker_a547404df9e4c81d98eb146f2651589fe}\label{class_worker_a547404df9e4c81d98eb146f2651589fe} 
+{\bfseries Worker} (std\+::string name, std\+::string company, std\+::string job\+Title, std\+::list$<$ \mbox{\hyperlink{class_payment}{Payment}} $>$ payment, Type\+Of\+Worker type\+Of\+Worker1, int personal\+Number)
+\item 
+const std\+::string \& \mbox{\hyperlink{class_worker_ada7f4e9e66689c295fb5a0ff52816003}{get\+Name}} () const
+\item 
+void \mbox{\hyperlink{class_worker_a6a1f08b42c9e6a7eaf3bfa3155c68ab6}{set\+Name}} (const std\+::string \&name)
+\item 
+const std\+::string \& \mbox{\hyperlink{class_worker_a9bd3c02748140641447f16474551a595}{get\+Company}} () const
+\item 
+void \mbox{\hyperlink{class_worker_ade36e7569fcecaaf43af8ffcda758588}{set\+Company}} (const std\+::string \&company)
+\item 
+const std\+::string \& \mbox{\hyperlink{class_worker_ab03bb85ac7cd8c9c7b6a0a763243161d}{get\+Job\+Title}} () const
+\item 
+void \mbox{\hyperlink{class_worker_a127275de199f3aad7a13243a8126bff2}{set\+Job\+Title}} (const std\+::string \&job\+Title)
+\item 
+std\+::list$<$ \mbox{\hyperlink{class_payment}{Payment}} $>$ \& \mbox{\hyperlink{class_worker_a1b7089225ff388c35555f9d832c18ea3}{get\+Payment}} ()
+\item 
+void \mbox{\hyperlink{class_worker_a472447be6e523982d06e0d5eacec7c06}{set\+Payment}} (const std\+::list$<$ \mbox{\hyperlink{class_payment}{Payment}} $>$ \&payment)
+\item 
+Type\+Of\+Worker \mbox{\hyperlink{class_worker_aebbc8b881729b55f1c2197910be4e07f}{get\+Type\+Of\+Worker}} () const
+\item 
+void \mbox{\hyperlink{class_worker_a7c75bc7012e4da7dd485a45245a3391a}{set\+Type\+Of\+Worker}} (Type\+Of\+Worker type\+Of\+Worker)
+\item 
+int \mbox{\hyperlink{class_worker_ad67ca62ee72fb28f07da83b93aa0216d}{get\+Personal\+Number}} () const
+\item 
+void \mbox{\hyperlink{class_worker_a688be5bb8298a420a6305efd85f90fed}{set\+Personal\+Number}} (int personal\+Number)
+\item 
+virtual void \mbox{\hyperlink{class_worker_a3b5fa703f542f0132499fc7f6ba1c8dc}{show\+Info}} ()=0
+\item 
+int \mbox{\hyperlink{class_worker_a82e8d1b86c31683b3f960d73acc06f6f}{return\+Total\+Money}} ()
+\item 
+void \mbox{\hyperlink{class_worker_a0ef67643951dc03a78b7bc79d8e8a20c}{add\+Payment}} (const \mbox{\hyperlink{class_payment}{Payment}} \&payment1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_worker_a9d8626364fc2e5353712381175347144}\label{class_worker_a9d8626364fc2e5353712381175347144} 
+std\+::string {\bfseries name}
+\item 
+\Hypertarget{class_worker_a5cfb5c69b74b5a616b84133200f2a7c2}\label{class_worker_a5cfb5c69b74b5a616b84133200f2a7c2} 
+std\+::string {\bfseries company}
+\item 
+\Hypertarget{class_worker_a52c75aeb904e7e5135e0d25a03f220dc}\label{class_worker_a52c75aeb904e7e5135e0d25a03f220dc} 
+std\+::string {\bfseries job\+Title}
+\item 
+\Hypertarget{class_worker_a2f9c5271d99c74604b6e821b59bc6405}\label{class_worker_a2f9c5271d99c74604b6e821b59bc6405} 
+std\+::list$<$ \mbox{\hyperlink{class_payment}{Payment}} $>$ {\bfseries payment}
+\item 
+\Hypertarget{class_worker_a55daa597a0de0b002d529066b07e4ebd}\label{class_worker_a55daa597a0de0b002d529066b07e4ebd} 
+Type\+Of\+Worker {\bfseries type\+Of\+Worker}
+\item 
+\Hypertarget{class_worker_a77f64401dd45f29abee29c3922d77d33}\label{class_worker_a77f64401dd45f29abee29c3922d77d33} 
+int {\bfseries personal\+Number}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_worker_a0ef67643951dc03a78b7bc79d8e8a20c}\label{class_worker_a0ef67643951dc03a78b7bc79d8e8a20c} 
+\index{Worker@{Worker}!addPayment@{addPayment}}
+\index{addPayment@{addPayment}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{addPayment()}{addPayment()}}
+{\footnotesize\ttfamily void Worker\+::add\+Payment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_payment}{Payment}} \&}]{payment1 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em payment1} & is added payment \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_worker_a9bd3c02748140641447f16474551a595}\label{class_worker_a9bd3c02748140641447f16474551a595} 
+\index{Worker@{Worker}!getCompany@{getCompany}}
+\index{getCompany@{getCompany}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{getCompany()}{getCompany()}}
+{\footnotesize\ttfamily const std\+::string \& Worker\+::get\+Company (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+name of company 
+\end{DoxyReturn}
+\Hypertarget{class_worker_ab03bb85ac7cd8c9c7b6a0a763243161d}\label{class_worker_ab03bb85ac7cd8c9c7b6a0a763243161d} 
+\index{Worker@{Worker}!getJobTitle@{getJobTitle}}
+\index{getJobTitle@{getJobTitle}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{getJobTitle()}{getJobTitle()}}
+{\footnotesize\ttfamily const std\+::string \& Worker\+::get\+Job\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+job title of worker 
+\end{DoxyReturn}
+\Hypertarget{class_worker_ada7f4e9e66689c295fb5a0ff52816003}\label{class_worker_ada7f4e9e66689c295fb5a0ff52816003} 
+\index{Worker@{Worker}!getName@{getName}}
+\index{getName@{getName}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const std\+::string \& Worker\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+name of worker 
+\end{DoxyReturn}
+\Hypertarget{class_worker_a1b7089225ff388c35555f9d832c18ea3}\label{class_worker_a1b7089225ff388c35555f9d832c18ea3} 
+\index{Worker@{Worker}!getPayment@{getPayment}}
+\index{getPayment@{getPayment}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{getPayment()}{getPayment()}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{class_payment}{Payment}} $>$ \& Worker\+::get\+Payment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+list of all payments of the worker 
+\end{DoxyReturn}
+\Hypertarget{class_worker_ad67ca62ee72fb28f07da83b93aa0216d}\label{class_worker_ad67ca62ee72fb28f07da83b93aa0216d} 
+\index{Worker@{Worker}!getPersonalNumber@{getPersonalNumber}}
+\index{getPersonalNumber@{getPersonalNumber}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{getPersonalNumber()}{getPersonalNumber()}}
+{\footnotesize\ttfamily int Worker\+::get\+Personal\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+personal number of \doxylink{class_worker}{Worker} 
+\end{DoxyReturn}
+\Hypertarget{class_worker_aebbc8b881729b55f1c2197910be4e07f}\label{class_worker_aebbc8b881729b55f1c2197910be4e07f} 
+\index{Worker@{Worker}!getTypeOfWorker@{getTypeOfWorker}}
+\index{getTypeOfWorker@{getTypeOfWorker}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{getTypeOfWorker()}{getTypeOfWorker()}}
+{\footnotesize\ttfamily Type\+Of\+Worker Worker\+::get\+Type\+Of\+Worker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+type of worker 
+\end{DoxyReturn}
+\Hypertarget{class_worker_a82e8d1b86c31683b3f960d73acc06f6f}\label{class_worker_a82e8d1b86c31683b3f960d73acc06f6f} 
+\index{Worker@{Worker}!returnTotalMoney@{returnTotalMoney}}
+\index{returnTotalMoney@{returnTotalMoney}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{returnTotalMoney()}{returnTotalMoney()}}
+{\footnotesize\ttfamily int Worker\+::return\+Total\+Money (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+all money which worker has 
+\end{DoxyReturn}
+\Hypertarget{class_worker_ade36e7569fcecaaf43af8ffcda758588}\label{class_worker_ade36e7569fcecaaf43af8ffcda758588} 
+\index{Worker@{Worker}!setCompany@{setCompany}}
+\index{setCompany@{setCompany}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{setCompany()}{setCompany()}}
+{\footnotesize\ttfamily void Worker\+::set\+Company (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{company }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em company} & is name of company \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_worker_a127275de199f3aad7a13243a8126bff2}\label{class_worker_a127275de199f3aad7a13243a8126bff2} 
+\index{Worker@{Worker}!setJobTitle@{setJobTitle}}
+\index{setJobTitle@{setJobTitle}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{setJobTitle()}{setJobTitle()}}
+{\footnotesize\ttfamily void Worker\+::set\+Job\+Title (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{job\+Title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em job\+Title} & is a job title of worker \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_worker_a6a1f08b42c9e6a7eaf3bfa3155c68ab6}\label{class_worker_a6a1f08b42c9e6a7eaf3bfa3155c68ab6} 
+\index{Worker@{Worker}!setName@{setName}}
+\index{setName@{setName}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Worker\+::set\+Name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & is name of worker \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_worker_a472447be6e523982d06e0d5eacec7c06}\label{class_worker_a472447be6e523982d06e0d5eacec7c06} 
+\index{Worker@{Worker}!setPayment@{setPayment}}
+\index{setPayment@{setPayment}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{setPayment()}{setPayment()}}
+{\footnotesize\ttfamily void Worker\+::set\+Payment (\begin{DoxyParamCaption}\item[{const std\+::list$<$ \mbox{\hyperlink{class_payment}{Payment}} $>$ \&}]{payment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em payment} & is a list of all payments of the worker \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_worker_a688be5bb8298a420a6305efd85f90fed}\label{class_worker_a688be5bb8298a420a6305efd85f90fed} 
+\index{Worker@{Worker}!setPersonalNumber@{setPersonalNumber}}
+\index{setPersonalNumber@{setPersonalNumber}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{setPersonalNumber()}{setPersonalNumber()}}
+{\footnotesize\ttfamily void Worker\+::set\+Personal\+Number (\begin{DoxyParamCaption}\item[{int}]{personal\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em personal\+Number} & is personal number of worker \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_worker_a7c75bc7012e4da7dd485a45245a3391a}\label{class_worker_a7c75bc7012e4da7dd485a45245a3391a} 
+\index{Worker@{Worker}!setTypeOfWorker@{setTypeOfWorker}}
+\index{setTypeOfWorker@{setTypeOfWorker}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{setTypeOfWorker()}{setTypeOfWorker()}}
+{\footnotesize\ttfamily void Worker\+::set\+Type\+Of\+Worker (\begin{DoxyParamCaption}\item[{Type\+Of\+Worker}]{type\+Of\+Worker }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em type\+Of\+Worker} & is type of worker \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_worker_a3b5fa703f542f0132499fc7f6ba1c8dc}\label{class_worker_a3b5fa703f542f0132499fc7f6ba1c8dc} 
+\index{Worker@{Worker}!showInfo@{showInfo}}
+\index{showInfo@{showInfo}!Worker@{Worker}}
+\doxysubsubsection{\texorpdfstring{showInfo()}{showInfo()}}
+{\footnotesize\ttfamily virtual void Worker\+::show\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+shows all info about worker 
+
+Implemented in \mbox{\hyperlink{class_contract_worker_a45740a4db745f06ac9474d70335e0119}{Contract\+Worker}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+worker/Worker.\+h\item 
+worker/Worker.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,235 @@
+\doxysection{Table.\+h}
+\hypertarget{_table_8h_source}{}\label{_table_8h_source}\index{myTable/Table.h@{myTable/Table.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Alexander\ on\ 29.01.2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ OOOP3\_TABLE\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ OOOP3\_TABLE\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ K,\ \textcolor{keyword}{typename}\ V>}
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node}{Node}}\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{bool}\ isElement\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ exist\ or\ not}}
+\DoxyCodeLine{00013\ \ \ \ \ K\ key;}
+\DoxyCodeLine{00014\ \ \ \ \ V\ *value;}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ contractNumber\ =\ 0;}
+\DoxyCodeLine{00016\ \};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ K,\ \textcolor{keyword}{typename}\ V>}
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_table}{Table}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ maxSize\ =\ 10000;}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<K,\ V>}}\ *table;}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ curSize;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ \ \ \ int\ countRelease(const\ K\ \&key);}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ \ \ \ void\ decreaseRelease(const\ K\ \&key,\ int\ release);}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_table}{Table}}()\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ table\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{struct_node}{Node<K,\ V>}}[maxSize];}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ maxSize;\ ++i)\ \{}}
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ table[i].key\ =\ 123;}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ curSize\ =\ 0;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_table}{\string~Table}}()\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}[]\ table;}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_table_1_1_iterator}{Iterator}}\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<K,\ V>}}\ *node;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<K,\ V>}}\ *table;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ size;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_table_1_1_iterator}{Iterator}}(\mbox{\hyperlink{struct_node}{Node<K,\ V>}}\ *table,\ \textcolor{keywordtype}{int}\ size)\ :\ size(size),\ table(table),\ index(0)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (index\ <\ size\ \&\&\ !table[index].isElement)\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ++index;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ size)\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ \&table[index];}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<K,\ V>}}\ \&operator*()\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *node;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_table_1_1_iterator}{Iterator}}\ \&operator++()\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ \&table[index];}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_table_1_1_iterator}{Iterator}}\ operator++(\textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_table_1_1_iterator}{Iterator}}\ newIter\ =\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ index++;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ node\ =\ \&table[index];}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ newIter;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ \ \ \ \ \ \ \ bool\ operator!=(const\ Iterator\ \&sec)\ \{}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ return\ index\ !=\ sec.index;}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ operator==(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_table_1_1_iterator}{Iterator}}\ \&sec)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ index\ ==\ sec.index;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_table_1_1_iterator}{Iterator}}\ begin()\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_table_1_1_iterator}{Iterator}}(table,\ curSize);}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ Iterator\ end()\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ Iterator\ iterator(table,\ curSize);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ maxSize;\ ++i)\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ ++iterator;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iterator;}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ \ \ \ Node<K,\ V>\ *searchNode(const\ K\ \&key,\ int\ release);}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ \ \ \ void\ deleteNode(const\ K\ \&key,\ int\ release);}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{comment}{//\ \ \ \ int\ insertNode(const\ K\ \&key,\ V\ *value);}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node<K,\ V>}}\ *searchNode(\textcolor{keyword}{const}\ K\ \&key,\ \textcolor{keywordtype}{int}\ contNumber);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ deleteNode(\textcolor{keyword}{const}\ K\ \&key,\ \textcolor{keywordtype}{int}\ contNumber);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{int}\ insertNode(\textcolor{keyword}{const}\ K\ \&key,\ V\ *value,\ \textcolor{keywordtype}{int}\ contNumber);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ showTable();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{comment}{//template<typename\ K,\ typename\ V>}}
+\DoxyCodeLine{00114\ \textcolor{comment}{//Node<K,\ V>\ *Table<K,\ V>::searchNode(const\ K\ \&key,\ int\ release)\ \{}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ maxSize;\ ++i)\ \{}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if\ (table[i].isElement\ \&\&\ table[i].key\ ==\ key\ \&\&\ table[i].release\ ==\ release)\ \{}}
+\DoxyCodeLine{00117\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ return\ \&table[i];}}
+\DoxyCodeLine{00118\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00120\ \textcolor{comment}{//\ \ \ \ return\ nullptr;}}
+\DoxyCodeLine{00121\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{comment}{//template<typename\ K,\ typename\ V>}}
+\DoxyCodeLine{00124\ \textcolor{comment}{//void\ Table<K,\ V>::decreaseRelease(const\ K\ \&key,\ int\ release)\ \{}}
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ curSize;\ ++i)\ \{}}
+\DoxyCodeLine{00126\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if\ (table[i].key\ ==\ key\ \&\&\ table[i].release\ >\ release)\ \{}}
+\DoxyCodeLine{00127\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ table[i].release-\/-\/;}}
+\DoxyCodeLine{00128\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00129\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00130\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{comment}{//template<typename\ K,\ typename\ V>}}
+\DoxyCodeLine{00133\ \textcolor{comment}{//void\ Table<K,\ V>::deleteNode(const\ K\ \&key,\ int\ release)\ \{}}
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ maxSize;\ ++i)\ \{}}
+\DoxyCodeLine{00135\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if\ (table[i].key\ ==\ key\ \&\&\ table[i].release\ ==\ release)\ \{}}
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ table[i].isElement\ =\ false;}}
+\DoxyCodeLine{00137\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ decreaseRelease(key,\ release);}}
+\DoxyCodeLine{00138\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ curSize-\/-\/;}}
+\DoxyCodeLine{00139\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ break;}}
+\DoxyCodeLine{00140\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00141\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00142\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{comment}{//template<typename\ K,\ typename\ V>}}
+\DoxyCodeLine{00145\ \textcolor{comment}{//int\ Table<K,\ V>::countRelease(const\ K\ \&key)\ \{}}
+\DoxyCodeLine{00146\ \textcolor{comment}{//\ \ \ \ int\ count\ =\ 0;}}
+\DoxyCodeLine{00147\ \textcolor{comment}{//\ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ curSize;\ ++i)\ \{}}
+\DoxyCodeLine{00148\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if\ (key\ ==\ table[i].key)\ \{}}
+\DoxyCodeLine{00149\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ count++;}}
+\DoxyCodeLine{00150\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00151\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ \ \ \ return\ count;}}
+\DoxyCodeLine{00153\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{comment}{//template<typename\ K,\ typename\ V>}}
+\DoxyCodeLine{00156\ \textcolor{comment}{//int\ Table<K,\ V>::insertNode(const\ K\ \&key,\ V\ *value)\ \{}}
+\DoxyCodeLine{00157\ \textcolor{comment}{//\ \ \ \ if\ (curSize\ >=\ maxSize)\ \{}}
+\DoxyCodeLine{00158\ \textcolor{comment}{//\ \ \ \ \ \ \ \ return\ -\/1;}}
+\DoxyCodeLine{00159\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00160\ \textcolor{comment}{//\ \ \ \ int\ index\ =\ 0;}}
+\DoxyCodeLine{00161\ \textcolor{comment}{//\ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ maxSize;\ ++i)\ \{}}
+\DoxyCodeLine{00162\ \textcolor{comment}{//\ \ \ \ \ \ \ \ if\ (!table[i].isElement)\ \{}}
+\DoxyCodeLine{00163\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ index\ =\ i;}}
+\DoxyCodeLine{00164\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ break;}}
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ \ \ \ table[index].value\ =\ value;}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ \ \ \ table[index].key\ =\ key;}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ \ \ \ table[index].isElement\ =\ true;}}
+\DoxyCodeLine{00170\ \textcolor{comment}{//\ \ \ \ table[index].contractNumber\ =\ 0;}}
+\DoxyCodeLine{00171\ \textcolor{comment}{//\ \ \ \ curSize++;}}
+\DoxyCodeLine{00172\ \textcolor{comment}{//\ \ \ \ return\ 0;}}
+\DoxyCodeLine{00173\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ K,\ \textcolor{keyword}{typename}\ V>}
+\DoxyCodeLine{00176\ \mbox{\hyperlink{struct_node}{Node<K,\ V>}}\ *\mbox{\hyperlink{class_table}{Table<K,\ V>::searchNode}}(\textcolor{keyword}{const}\ K\ \&key,\ \textcolor{keywordtype}{int}\ contNumber)\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ maxSize;\ ++i)\ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (table[i].isElement\ \&\&\ table[i].key\ ==\ key\ \&\&\ table[i].contractNumber\ ==\ contNumber)\ \{}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&table[i];}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00181\ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00183\ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ K,\ \textcolor{keyword}{typename}\ V>}
+\DoxyCodeLine{00186\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table}{Table<K,\ V>::deleteNode}}(\textcolor{keyword}{const}\ K\ \&key,\ \textcolor{keywordtype}{int}\ contNumber)\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ maxSize;\ ++i)\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (table[i].key\ ==\ key\ \&\&\ table[i].contractNumber\ ==\ contNumber)\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ table[i].isElement\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ curSize-\/-\/;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ K,\ \textcolor{keyword}{typename}\ V>}
+\DoxyCodeLine{00197\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_table}{Table<K,\ V>::insertNode}}(\textcolor{keyword}{const}\ K\ \&key,\ V\ *value,\ \textcolor{keywordtype}{int}\ contNumber)\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{if}\ (curSize\ >=\ maxSize)\ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00200\ \ \ \ \ \}}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ 0;}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ maxSize;\ ++i)\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!table[i].isElement)\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ index\ =\ i;}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ table[index].value\ =\ value;}
+\DoxyCodeLine{00209\ \ \ \ \ table[index].key\ =\ key;}
+\DoxyCodeLine{00210\ \ \ \ \ table[index].isElement\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00211\ \ \ \ \ table[index].contractNumber\ =\ contNumber;}
+\DoxyCodeLine{00212\ \ \ \ \ curSize++;}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00214\ \}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ K,\ \textcolor{keyword}{typename}\ V>}
+\DoxyCodeLine{00217\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table}{Table<K,\ V>::showTable}}()\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ maxSize;\ ++i)\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (table[i].isElement\ \&\&\ table[i].value)\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{}\ element\ \ ===\ \ key:\ "{}}\ <<\ table[i].key\ <<\ \textcolor{stringliteral}{"{}\ contract\ Number:\ "{}}\ <<\ table[i].contractNumber\ <<\ \textcolor{stringliteral}{"{}\ \ exist:\ "{}}}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ table[i].isElement\ <<\ std::endl;}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ table[i].value-\/>showInfo();}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//OOOP3\_TABLE\_H}}
+
+\end{DoxyCode}

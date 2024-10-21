@@ -1,0 +1,39 @@
+\doxysection{Application.\+h}
+\hypertarget{_application_8h_source}{}\label{_application_8h_source}\index{application/Application.h@{application/Application.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ Alexander\ on\ 29.01.2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ OOOP3\_APPLICATION\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ OOOP3\_APPLICATION\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../myTable/Table.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../worker/ContractWorker.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../worker/BudgetWorker.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_application}{Application}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_table}{Table<long,\ Worker>}}\ workers;}
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_application_a16d6d5f010736cf91236d9ae8f691bbd}{addTaxpayer}}(\textcolor{keywordtype}{long}\ personalNumber,\ \mbox{\hyperlink{class_worker}{Worker}}\ *worker);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_application_a743f55165404f3d36a1317aaf6956ab3}{calculateTax}}(\textcolor{keywordtype}{int}\ personalNumber);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{class_table}{Table<long,\ Worker>}}\ \&getWorkers()\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ workers;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ setWorkers(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_table}{Table<long,\ Worker>}}\ \&workers)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ Application::workers\ =\ workers;}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_application_a427d62b2266aaf69831bf0768e694e65}{showTable}}();}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//OOOP3\_APPLICATION\_H}}
+
+\end{DoxyCode}
